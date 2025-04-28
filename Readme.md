@@ -11,7 +11,11 @@ This is a simple implementation of the classic Snake game. The player controls a
 - Smooth snake movement
 - Score tracking
 - Food spawns randomly on the grid
-- Game over on collision with walls or self
+- Toggle between wall collision mode and wrap-around mode
+- Start screen with instructions
+- Game over screen with restart option
+- Gradual speed increase as the snake grows
+- Visual grid for better spatial awareness
 
 ## Prerequisites
 
@@ -39,6 +43,9 @@ pip install pygame
 ## Game Controls
 
 - **Arrow Keys**: Control the snake's direction
+- **SPACE**: Toggle wall collisions (on start screen) / Restart game (on game over screen)
+- **ENTER**: Start the game from the start screen
+- **P**: Pause/unpause the game during gameplay
 - **Close Window**: Quit the game
 
 ## Technical Details
@@ -47,6 +54,23 @@ pip install pygame
 - Uses Pygame for graphics and input handling
 - Fixed grid-based movement
 - 10 frames per second gameplay speed
+
+### Common Warnings
+
+When running the game, you may see warnings like:
+
+```
+RuntimeWarning: Your system is avx2 capable but pygame was not built with support for it.
+```
+
+Or ALSA-related warnings on Linux systems:
+
+```
+ALSA lib confmisc.c:855:(parse_card) cannot find card '0'
+ALSA lib conf.c:5204:(_snd_config_evaluate) function snd_func_card_inum returned error: No such file or directory
+```
+
+These warnings are common and typically don't affect gameplay. The game should run normally despite these messages.
 
 ## Project Structure
 
